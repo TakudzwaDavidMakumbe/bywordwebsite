@@ -162,16 +162,18 @@ export default function RecoveryPage() {
                 key={index}
                 className={`flex flex-col ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} gap-8 items-center`}
               >
-                <div className="lg:w-1/2">
-                  <div className="relative h-64 md:h-80 w-full bg-blue-900 rounded-lg overflow-hidden">
-                    <Image
-                      src={service.image || "/placeholder.svg"}
-                      alt={service.title}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                </div>
+                <div className="w-full lg:w-1/2">
+                                  <div className="relative w-full h-[200px] md:h-[320px] bg-blue-900 rounded-lg overflow-hidden">
+                                    <Image
+                                      src={service.image || "/placeholder.svg"}
+                                      alt={service.title}
+                                      fill
+                                      sizes="(max-width: 768px) 100vw, 50vw"
+                                      priority
+                                      className="object-cover"
+                                    />
+                                  </div>
+                                </div>
                 <div className="lg:w-1/2">
                   <h2 className="text-2xl md:text-3xl font-bold mb-4">{service.title}</h2>
                   <p className="text-gray-600 mb-6">{service.description}</p>

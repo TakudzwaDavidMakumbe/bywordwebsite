@@ -110,12 +110,14 @@ export default function ServicesPage() {
                 key={service.id}
                 className={`flex flex-col ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} gap-8 items-center`}
               >
-                <div className="lg:w-1/2">
-                  <div className="relative h-64 md:h-80 w-full bg-blue-900 rounded-lg overflow-hidden">
+                <div className="w-full lg:w-1/2">
+                  <div className="relative w-full h-[200px] md:h-[320px] bg-blue-900 rounded-lg overflow-hidden">
                     <Image
                       src={service.image || "/placeholder.svg"}
                       alt={service.title}
                       fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      priority
                       className="object-cover"
                     />
                   </div>
